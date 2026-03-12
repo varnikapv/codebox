@@ -5,11 +5,15 @@ import { eq } from "drizzle-orm";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-    const  user= await currentUser();
+    const user = await currentUser();
+
+    if (!user) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     //If user already exists?
     const users = await db.select().from(usersTable)
-    .where(eq(usersTable.email,user?.primaryEmailAddress?.emailAddress))
+    .where(eq(usersTable.email, user.primaryEmailAddress!.emailAddress))
 
     //If Not the Create New user Record
     if(users?.length<=0){
