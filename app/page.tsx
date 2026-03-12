@@ -5,8 +5,7 @@ import Hero from "./_components/Hero";
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
-      {/* Header / Navigation Section */}
-      <Header />
+     
       {/* Hero Section */}
       <Hero />
     </div>

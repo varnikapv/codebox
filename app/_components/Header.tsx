@@ -51,7 +51,7 @@ const {user} = useUser();
 
 
   return (
-    <div className='p-4 max-w-7xl flex justify-between items-center w-full'>
+    <div suppressHydrationWarning className='p-4 max-w-7xl flex justify-between items-center w-full'>
         <div className='flex gap-2 items-center'>
              <Image src={'/logo.png'} alt = 'logo' width = {40} height={40} />
         <h2 className='font-bold text-3xl font-game'>CodeBox</h2>
@@ -74,22 +74,19 @@ const {user} = useUser();
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-        <NavigationMenuLink>
-          <Link href={'/projects'}>Projects
-          </Link>
-        </NavigationMenuLink>
+          <NavigationMenuLink asChild>
+            <Link href={'/projects'}>Projects</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
-         <NavigationMenuItem>
-        <NavigationMenuLink>
-          <Link href={'/pricing'}>Pricing
-          </Link>
-        </NavigationMenuLink>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild>
+            <Link href={'/pricing'}>Pricing</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
-         <NavigationMenuItem>
-        <NavigationMenuLink>
-          <Link href={'/contact-us'}>Contact
-          </Link>
-        </NavigationMenuLink>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild>
+            <Link href={'/contact-us'}>Contact</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
 
       </NavigationMenuList>
