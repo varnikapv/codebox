@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 import { useState } from "react"
 
 function EnrolledCourses() {
@@ -16,7 +17,9 @@ function EnrolledCourses() {
              width={90} height={90} />
 
              <h2 className="font-game text-xl">You Don't Have Any Enrolled Courses</h2>
-             <Button variant={'pixel'} className="font-game text-lg" size= {'lg'}> Browse All Courses</Button>
+             <Link href={'/courses'}>
+                <Button variant={'pixel'} className="font-game text-lg" size= {'lg'}> Browse All Courses</Button>
+             </Link>
         </div>
         :
         <div>
